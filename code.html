@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+<title>卡密</title>
+ </head>
+ <body>
+  
+
+
+
+
+	<div>
+		<h3>卡密测试</h3>
+		<p class="code"></p>
+		<button onclick="getCode()">获取卡密</button>
+	</div>
+
+
+
+
+
+<script type="text/javascript">
+	const Lengths=15;//卡密长度
+	
+
+	function randomCode(){
+		var strArray=[1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+		for(var i=0,code='';i<Lengths;i++){
+			var random=Math.floor(Math.random()*(strArray.length));
+			code+=strArray[random];
+		}
+		return code;
+	}
+
+
+	function getCode(){
+		var code=document.getElementsByClassName('code')[0];
+		code.innerHTML=randomCode();
+	}
+	
+
+</script>
+
+ </body>
+</html>
